@@ -1,0 +1,47 @@
+<!--Loading the Static Files from the "static" folder-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Recipe Application</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles_recipes.css' %}" />
+    </head>
+<body>
+    <div class="return_btn">
+        <p><a href="{% url 'recipes:home' %}">Home Page</a></p>
+        <p><a href="{% url 'profiles:profile' %}">Go to Profile</a>
+    </div>
+    <div class="heading">
+        <h1>The Recipes</h1>
+    </div>
+
+    <div class="add-recipe">
+        <p class="add-recipe-btn"><a href="{% url 'recipes:add_recipe' %}">Add a Recipe</a></p>
+    </div>
+
+    <div class="recipe-grid">
+        {% for object in object_list %}
+            <div class="recipe-item">
+                <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+                <img src="{{ object.pic.url }}" width="200" height="200" />
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if messages %}
+        <div class="success-message">
+            {% for message in messages %}
+                <p {% if message.tags %} 
+                    class="{{ message.tags }}"
+                    {% endif %}>
+
+                    {{ message }}
+
+                </p>
+            {% endfor %}
+        </div>
+    {% endif%}
+    
+</body>
+</html>

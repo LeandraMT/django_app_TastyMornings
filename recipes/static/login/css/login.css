@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+:root {
+    --bgPrimaryColor: #dbd8e3;
+    --btnColor: #3a4750;
+
+    --primaryTextColor: #222831;
+    --secondaryTextColor: #eeeeee;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    background-color: var(--bgPrimaryColor);
+}
+
+.image {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -20%;
+    left: 0;
+    z-index: -1;
+}
+
+.main_text {
+    position: absolute;
+    top: 20%;
+    left: 31%;
+    /*transform: translate(-50%, -50%);*/
+    color: var(--btnColor);
+}
+
+.main_text h1 {
+    font-size: 4em;
+}
+
+.login_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primaryTextColor);
+    padding: 10px 12px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    font-size: 1.1em;
+}
+
+.login_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(172, 170, 170, 0.342);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.login_btn button {
+    position: relative;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    background-color: var(--btnColor);
+    transition: box-shadow 0.3s ease;
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+.login_btn button:hover {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

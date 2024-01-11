@@ -1,0 +1,29 @@
+<!--Loading the Static Files from the "static" folder-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Recipe Application</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles_main.css' %}" />
+    </head>
+    <body>
+        <div class="image">
+            <img src="{% static 'recipes/images/breakfast-homepage-unsplash.jpg' %}" alt="Home" />
+            <h3 class="sub_text">An application full of breakfast recipes to start your mornings Fresh and Flavourful!</h3>
+        </div>
+
+        <div class="form">
+            <form action="{% url 'recipes:search' %}" method="GET">
+                <input type="text" name="q" placeholder="Search by ingredient">
+                <button class="search-btn" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="buttons">
+            <p><a href="{% url 'recipes:recipes-list' %}">Check out the Recipes</a>
+            <p><a href="{% url 'profiles:profile' %}">Go to Profile</a></p>
+            <p><a href="{% url 'logout' %}">Logout</a>
+        </div>
+        
+    </body>
+</html>

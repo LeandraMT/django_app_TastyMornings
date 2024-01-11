@@ -1,0 +1,33 @@
+<!--Loading the Static Files from the "static" folder-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Recipe Application</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/login.css' %}" />
+    </head>
+    <body>
+        <div class="image">
+            <img src="{% static 'login/images/welcome-unsplash.jpg' %}" alt="Home" />
+        </div>
+        <div class="main_text">
+            <h1>Welcome to TastyMornings</h1>
+        </div>
+        <div class="login_btn">
+            {% if error_message %}
+                {{ error_message }}
+            {% endif %}
+            <form action="" method="POST">
+                {% csrf_token %} {% comment %} django security token {% endcomment %}
+                <label for="id_username">Username:</label>
+                {{ form.username }}
+                <label for="id_password">Password:</label>
+                {{ form.password }}
+                <button type="submit">
+                    Login
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

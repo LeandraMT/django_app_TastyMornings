@@ -1,0 +1,30 @@
+<!--Loading the Static Files from the "static" folder-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile View</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'profile/css/about.css' %}" />
+    </head>
+    <body>
+        <h1>About Me</h1>
+        <div class="about-me-container">
+            <p>
+                Welcome to a project that I am extremely proud of. <span>TastyMornings</span> web application, built with Django and hosted on Heroku.
+                <br>
+                I entered the world of technology around a year ago as I needed a change and wanted to challenge myself with
+                acquiring new skills and deepen previous skills. I am a motivated person who likes to continue learning and 
+                provide functional and user-friendly web applications. I will strive to always include innovatice concepts and
+                ideas to projects, but also that makes it easy to navigate for all users.
+            </p>
+        </div>
+        <div class="links">
+            <p>If you liked what you see. Check out my portfolio website:<br>
+            <a href="https://leandramagantier.netlify.app/">Portfolio website</a><br>
+            Or you can check out my GitHub projects:<br>
+            <a href="https://github.com/LeandraMT">GitHub</a>
+            </p>
+        </div>
+    </body>
+</html>

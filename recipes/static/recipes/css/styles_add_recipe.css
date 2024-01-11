@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+:root {
+    --bgPrimaryColor: #dbd8e3;
+    --bgSecondaryColor: #e6dedd;
+    --btnColor: #3a4750;
+
+    --primaryTextColor: #222831;
+    --secondaryTextColor: #eeeeee;
+}
+
+body {
+    font-family: 'Raleway';
+    background-color: var(--bgPrimaryColor);
+    color: var(--primaryTextColor);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+form input {
+    padding: 6px;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+form textarea {
+    border: none;
+    border-radius: 4px;
+}
+
+.recipe-add-btn {
+    border: none;
+    border-radius: 3px;
+    padding: 6px 8px;
+    background-color: var(--btnColor);
+    color: var(--secondaryTextColor);
+    font-size: .9em;
+}
+
+.recipe-add-btn:hover {
+    cursor: pointer;
+}
+
+.return_btn {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.return_btn p {
+    margin: 0;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 7px;
+    background-color: var(--btnColor);
+    transition: box-shadow 0.3s ease;
+    font-size: 1em;;
+}
+
+.return_btn a {
+    text-decoration: none;
+    color: var(--secondaryTextColor);
+}
+
+.return_btn p:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}

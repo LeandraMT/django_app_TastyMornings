@@ -1,0 +1,32 @@
+<!--Loading the Static Files from the "static" folder-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Application</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/recipes_list_search.css' %}" />
+    </head>
+    <body>
+        <div class="return_btn">
+            <p><a href="{% url 'recipes:home' %}">Home Page</a></p>
+            <p><a href="{% url 'profiles:profile' %}">Go to Profile</a>
+        </div>
+
+        <div class="heading">
+            <h1>Search Results</h1>
+        </div>
+        {% if object_list %}
+            <div class="recipe-grid">
+                {% for recipe in object_list %}
+                    <div class="recipe-item">
+                        <a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a>
+                        <img src="{{ recipe.pic.url }}" width="200" height="200" />
+                    </div>
+                {% endfor %}
+                </div>
+        {% else %}
+            <p>No recipes found. Try another ingredient!</p>
+        {% endif %}
+    </body>
+</html>

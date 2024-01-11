@@ -1,0 +1,26 @@
+<!--Loading the Static Files from the "static" folder-->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Recipe Application</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles_detail.css' %}" />
+    </head>
+</html>
+<body>
+    <div class="return_btn">
+        <p><a href="{% url 'recipes:recipes-list' %}">Return to Recipes List</a></p>
+        <p><a href="{% url 'recipes:home' %}">Return to Home Page</a></p>
+    </div>
+    <div class="details-card">
+        <h2>Recipe: {{object.name}}</h2>
+        <div class="detail">
+            <b>Name:</b> {{object.name}} <br>
+            <b>Ingredients:</b> {{object.ingredients}} <br>
+            <b>Cooking Time:</b> {{object.cooking_time}} <br>
+            <b>Description:</b> {{object.description}} <br>
+        </div>
+        <img src="{{object.pic.url}}" width="200" height="200" />
+    </div>
+</body>

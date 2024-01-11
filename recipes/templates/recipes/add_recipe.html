@@ -1,0 +1,24 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles_add_recipe.css' %}" />
+</head>
+<body>
+    <h1>Add a New Recipe</h1>
+    <div class="form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="recipe-add-btn" type="submit">Add Recipe</button>
+        </form>
+    </div>
+
+    <div class="return_btn">
+        <p><a href="{% url 'recipes:home' %}">Home Page</a></p>
+        <p><a href="{% url 'profiles:profile' %}">Go to Profile</a>
+    </div>
+</body>
+</html>
