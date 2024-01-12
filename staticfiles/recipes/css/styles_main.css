@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+:root {
+    --bgPrimaryColor: #dbd8e3;
+    --btnColor: #3a4750;
+
+    --primaryTextColor: #222831;
+    --secondaryTextColor: #eeeeee;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    background-color: var(--bgPrimaryColor);
+}
+
+.image {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -25%;
+    left: 0;
+    z-index: -1;
+}
+
+.sub_text {
+    position: absolute;
+    font-size: 2em;
+    font-weight: 400;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, 37%);
+    text-align: center;
+    color: var(--primaryTextColor);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-btn {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 35%;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 8px;
+    background-color: var(--btnColor);
+    transition: box-shadow 0.3s ease;
+    color: var(--secondaryTextColor);
+    font-size: .9em;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.buttons p {
+    border: none;
+    border-radius: 3px;
+    padding: 10px 7px;
+    background-color: var(--btnColor)
+}
+
+.buttons a {
+    text-decoration: none;
+    color: var(--secondaryTextColor);
+}

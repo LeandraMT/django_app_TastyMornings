@@ -15,4 +15,5 @@ urlpatterns = [
     path("about/", include("profiles.urls")),
 ]
 
+# Corrected pattern for serving media files during development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
