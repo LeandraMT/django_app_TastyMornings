@@ -52,11 +52,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# Debugging issues with media files not uploading
-WHITENOISE_MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-]
-
 ROOT_URLCONF = "recipe_project.urls"
 
 TEMPLATES = [
@@ -134,16 +129,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATICFILES_DIRS = [
+"""STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "recipes", "static"),
     os.path.join(BASE_DIR, "profiles", "static"),
-]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+]"""
+STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 # Debugging issues with static files
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
 
 # Default primary key field type
