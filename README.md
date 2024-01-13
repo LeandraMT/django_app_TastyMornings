@@ -63,3 +63,7 @@ A Django based web application, deployed on Heroku. Database operations are perf
 
 # Check the project live
 <a href="https://tastymornings-ae401e6582be.herokuapp.com/">TastyMornings</a>
+
+To login please use the following credentials:
+- username: demo
+- password: Demo123
