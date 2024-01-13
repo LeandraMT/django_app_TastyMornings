@@ -13,9 +13,9 @@ urlpatterns = [
     path("profile/", include("profiles.urls")),
     path("add_recipe/", include("recipes.urls")),
     path("about/", include("profiles.urls")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 # Corrected pattern for serving media files during development
-"""if settings.DEBUG:
+if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)"""
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
